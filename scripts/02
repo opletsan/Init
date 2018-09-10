@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "0 4 * * 1 apt update >> /var/log/update_script.log && apt upgrade > /var/log/update_script.log" > file_update
+crontab file_update
+rm -rf file_update

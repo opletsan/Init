@@ -1,0 +1,14 @@
+52.84.197.41
+Amazon AWS Network Operations
+52.84.197.10
+Amazon AWS Network Operations
+52.84.197.107
+Amazon AWS Network Operations
+52.84.197.139
+Amazon AWS Network Operations
+
+#	for i in $(dig +short slash16.org A)
+#	do
+#		echo $i
+#		whois $i | grep "OrgNOCName: " | sed 's/OrgNOCName:   //'
+#	done

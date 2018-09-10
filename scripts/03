@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ "$#" -eq 1 ]
+then
+    if [ -d "$1" ]
+    then
+        ls -lS $1
+    else
+        echo "Argument must be a folder"
+    fi
+elif [ "$#" -lt 1 ]
+then
+	echo "usage: target folder"
+else
+    echo "Too many arguments"
+fi

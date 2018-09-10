@@ -1,0 +1,10 @@
+#!/bin/bash
+crontab -l > check_update
+echo "0 0 * * * \
+	msum1=\"\$(md5sum /etc/crontab | awk '{ print $1 }')\" && \
+	msum2=\"\$(cat /etc/crontab.log)\" && \
+	if [ '\$msum1' != '\$msum2' ] ; then \
+		'\$msum1' > /etc/crontab.log && \
+		mail -s 'crontab modified' root ; fi" > check_update
+crontab check_update
+rm -rf check_update
